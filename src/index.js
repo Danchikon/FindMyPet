@@ -1,21 +1,32 @@
 const nodemailer = require('nodemailer')
 const mongoose = require('mongoose')
 const express = require('express')
-
-const Post = require('./models/Post')
+const expressHandlebars = require('express-handlebars')
+const path = require('path')
 
 const postRouter = require("./routes/postRouter");
 const homeRouter = require("./routes/homeRouter");
 
 
-const app = express()
 const PORT = process.env.PORT || 4000
-
 const URI = "mongodb+srv://User:772298NOne@findmypetcluster.m9aqq.mongodb.net/posts";
 
-app.set('view engine', 'pug')
 
-app.use(express.static('public'))
+const app = express()
+const hbs = expressHandlebars.create({
+  defaultLayout: 'main',
+  extname: 'hbs'
+})
+
+
+app.engine('hbs', hbs.engine)
+app.set('view engine', 'hbs')
+app.set('views', 'views')
+
+
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static(path.join(__dirname, 'public')))
+
 
 app.use(postRouter)
 app.use(homeRouter)
