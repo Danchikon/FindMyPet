@@ -1,0 +1,9 @@
+@mixin radius-all {
+    border-radius: 15px !important;
+}
+@mixin radius-none {
+    border-radius: 0 !important;
+}
+@mixin less-opacity {
+    opacity: .7;
+}

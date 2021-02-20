@@ -1,0 +1,30 @@
+.container-full{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-wrap: wrap;
+    position:relative;
+    justify-content:center;
+    box-sizing:border-box;
+    background-position:center center;
+    background-size:cover;
+    border:1px solid red;
+    padding: 0 10vw;
+}
+.container{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F2E6DC;
+    @include radius-all;
+}
+
+.no-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+.full-height{
+    height: 100% !important;
+}
