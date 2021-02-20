@@ -1,16 +1,16 @@
-const util = require("util");
-const multer = require("multer");
-const GridFsStorage = require("multer-gridfs-storage");
+const util = require("util")
+const multer = require("multer")
+const GridFsStorage = require("multer-gridfs-storage")
 
-var storage = new GridFsStorage({
+const storage = new GridFsStorage({
   url: "mongodb+srv://Daniel:YSgUyU9bdikH8SG9@findmypetcluster.m9aqq.mongodb.net/findmypet_db",
   options: { useNewUrlParser: true, useUnifiedTopology: true },
   file: (req, file) => {
     const match = ["image/png", "image/jpeg"];
 
     if (match.indexOf(file.mimetype) === -1) {
-      const filename = `${Date.now()}-bezkoder-${file.originalname}`;
-      return filename;
+      const filename = `${Date.now()}-bezkoder-${file.originalname}`
+      return filename
     }
 
     return {
@@ -20,6 +20,6 @@ var storage = new GridFsStorage({
   }
 });
 
-var uploadFile = multer({ storage: storage }).single("file");
-var uploadFilesMiddleware = util.promisify(uploadFile);
-module.exports = uploadFilesMiddleware;
+const uploadFile = multer({ storage: storage }).single("file")
+const uploadFilesMiddleware = util.promisify(uploadFile);
+module.exports = uploadFilesMiddleware

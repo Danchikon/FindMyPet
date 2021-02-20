@@ -4,7 +4,7 @@ const postController = require("../controllers/postController");
 const postRouter = Router()
 
 
-postRouter.get('/post', postController.getPost)
+postRouter.get('/post/:postId', postController.getPost)
 
 postRouter.get('/create/post', postController.createPost)
 

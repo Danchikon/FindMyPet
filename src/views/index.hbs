@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/main.css">
-    <link rel="stylesheet" href="./assets/styles/grid.css">
-    <title>Find my pet</title>
-</head>
+
 <body>
     <header class="header">
         <div class="container-full">
@@ -33,7 +24,7 @@
                                     </svg>
                                     <h3>Шукаю</h3>
                             </a>
-                            <a href="#" class="link-actions grid-el center-all">
+                            <a href="/create/post" class="link-actions grid-el center-all">
                                 <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m256 0c-112.36 0-203.772 91.411-203.772 203.772 0 43.688 13.626 85.341 39.406 120.458 24.119 32.854 56.819 57.356 94.839 71.13l69.302 116.64 72.375-117.615c78.953-29.877 131.623-105.793 131.623-190.613-.001-112.361-91.413-203.772-203.773-203.772zm0 332.821c-71.158 0-129.049-57.891-129.049-129.049s57.891-129.049 129.049-129.049 129.049 57.891 129.049 129.049-57.891 129.049-129.049 129.049z"/><path d="m256 104.78c-54.585 0-98.992 44.408-98.992 98.992s44.407 98.992 98.992 98.992 98.992-44.408 98.992-98.992-44.407-98.992-98.992-98.992zm-14.606 144.263-45.702-45.702 21.253-21.253 24.449 24.448 53.568-53.568 21.253 21.253z"/></g></svg>
                                 <h3>Знайшов</h3>
                             </a>
@@ -57,7 +48,7 @@
                     {{#if posts.length}}
                         {{#each posts}}
                         <li class="grid-el column">
-                                <a href="#">
+                                <a href="post/{{ _id }}">
                                     <div class="status found row">
                                         <div class="main center-all">
                                             <h4>{{ type }}</h4>
@@ -153,7 +144,7 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
+    {{!-- <footer class="footer">
         <ul class="footer-slider margin-vertical-30 vertical-center">
             <li class="vertical-center">JWP</li>
             <li class="vertical-center">JWP</li>
@@ -164,7 +155,7 @@
             <li class="vertical-center">JWP</li>
             <li class="vertical-center">JWP</li>
         </ul>
-    </footer>
+    </footer> --}}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
