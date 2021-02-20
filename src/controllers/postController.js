@@ -1,4 +1,4 @@
-const { lostPetPost } = require("../models/Post");
+const { Post } = require("../models/Post");
 
 
 exports.postPost = async (req, res) => {
@@ -14,7 +14,7 @@ exports.postPost = async (req, res) => {
         description 
     } = req.body
 
-    const post = new lostPetPost({
+    const post = new Post({
        
         phone: phone,
         email: email,

@@ -1,11 +1,13 @@
-exports.getPosts = async (req, res) => {
-    res.render('posts', {
-    
-    })
-}
+const { Post } = require("../models/Post");
 
-exports.getHome = async (req, res) => {
-    res.render('index', {
+
+exports.getPosts = async (req, res) => {
     
+    const posts = await Post.find({}).lean()
+
+    console.log(posts)
+
+    res.render('index', {
+        posts: posts
     })
 }

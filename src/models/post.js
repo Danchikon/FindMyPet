@@ -36,5 +36,4 @@ const postSchema = Schema({
     description: { type: String }
 })
 
-exports.findPetPost = model('find_pets', postSchema)
-exports.lostPetPost = model('lost_pets', postSchema)
+exports.Post = model('posts', postSchema)

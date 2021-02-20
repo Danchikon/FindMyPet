@@ -1,14 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/styles/main.css">
-        <link rel="stylesheet" href="assets/styles/grid.css">
+        <link rel="stylesheet" href="./assets/styles/main.css">
+        <link rel="stylesheet" href="./assets/styles/grid.css">
         <title>Create post</title>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/> -->
     </head>
 <body>
     <header class="header">
@@ -18,30 +22,21 @@
                     <a href="#" class="logo">Find my pet</a>
                 </nav>
             </div>
+            
         </div>
     </header>
     <section class="post-creator">
         <div class="container-full">
             <div class="container">
             <form action="" method="post" class="row">
-                <div class="form-container padding-1vw four-per-row">
-                    <div class="photo-el grid-el">
-                        <img src="assets/img/jpg/cat-two.jpg" alt="">
-                    </div>
-                    <div class="photo-el grid-el">
-                        <img src="assets/img/jpg/cat.jpg" alt="">
-                    </div>
-                    <div class="photo-el grid-el">
-                        <img src="assets/img/jpg/cat.jpg" alt="">
-                    </div>
-                    <div class="photo-el grid-el">
-                        <input type="file" name="photo" id="upload-photo"/>
-                        <label for="upload-photo" class="center-all">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.174 36.174" style="enable-background:new 0 0 36.174 36.174;" xml:space="preserve"><g><path d="M23.921,20.528c0,3.217-2.617,5.834-5.834,5.834s-5.833-2.617-5.833-5.834s2.616-5.834,5.833-5.834S23.921,17.312,23.921,20.528z M36.174,12.244v16.57c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-16.57c0-2.209,1.791-4,4-4h4.92V6.86c0-1.933,1.566-3.5,3.5-3.5h11.334c1.934,0,3.5,1.567,3.5,3.5v1.383h4.92C34.383,8.244,36.174,10.035,36.174,12.244z M26.921,20.528c0-4.871-3.963-8.834-8.834-8.834c-4.87,0-8.833,3.963-8.833,8.834s3.963,8.834,8.833,8.834C22.958,29.362,26.921,25.399,26.921,20.528z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-                        </label>
-
-                    </div>
+                <div class="form-container image-upload">
+                    <input type="file" name="photo" id="upload-photo"/>
+                    <label for="upload-photo" class="center-all">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.174 36.174" style="enable-background:new 0 0 36.174 36.174;" xml:space="preserve"><g><path d="M23.921,20.528c0,3.217-2.617,5.834-5.834,5.834s-5.833-2.617-5.833-5.834s2.616-5.834,5.833-5.834S23.921,17.312,23.921,20.528z M36.174,12.244v16.57c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-16.57c0-2.209,1.791-4,4-4h4.92V6.86c0-1.933,1.566-3.5,3.5-3.5h11.334c1.934,0,3.5,1.567,3.5,3.5v1.383h4.92C34.383,8.244,36.174,10.035,36.174,12.244z M26.921,20.528c0-4.871-3.963-8.834-8.834-8.834c-4.87,0-8.833,3.963-8.833,8.834s3.963,8.834,8.833,8.834C22.958,29.362,26.921,25.399,26.921,20.528z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                    </label>
                 </div>
+                <div class="form-container main-info padding-1vw"></div>
+                <input type="text" placeholder="Назва оголошення">
                 <!-- 
                 <input type="text" name="phone" placeholder="phone">
                 <input type="email" name="email" id="" placeholder="email">
@@ -55,13 +50,19 @@
                 <input type="text" name="color" placeholder="color">
                 <input type="text" name="weight" placeholder="Weight">
                 <textarea name="info" id="" rows="10"></textarea> -->
+                <div class="form-container"></div>
+                <div class="form-container">
+                    <div id="map"></div>
+                </div>
             </form>
             </div>
-            
+
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
-
+    <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         $('.footer-slider').slick({
@@ -92,6 +93,9 @@
 
                 ]
         }); 
+    </script>
+    <script>
+        // var mymap = L.map('map').setView([51.505, -0.09], 13);
     </script>
 </body>
 </html>
