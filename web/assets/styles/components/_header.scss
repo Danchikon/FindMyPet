@@ -1,18 +1,61 @@
 header.header{
-    & .welcome-message{
+    width: 100%;
+    & nav.navigation{
         width: 100%;
-         & img{
-            width: 200px;
+        height: 50px;
+        & a.logo{
+            text-transform: uppercase;
+            color: $primary-color;
+            font-size: $h2-size;
+            font-weight: 800;
         }
     }
-    & .header-actions{
+    & .header-content{
         width: 100%;
-        height: auto;
-        
-        & .link-actions{
-            border:1px solid red;
-            height: 100px;
-            @include radius-all;
+        height: calc(100vh - 50px);
+        & .header-left,
+        & .header-right{
+            box-sizing: border-box;
+        }
+        .header-left{
+            width: 60%;
+            .header-actions{
+                width: 100%;
+                height: 300px;
+                box-sizing: border-box;
+                .link-actions{
+                    height: 100%;
+                    background-color: $red-color;
+                    color:$white-color;
+                    text-transform: uppercase;
+                    @include radius-all;
+                    @include default-transition;
+
+                    svg{
+                        width: 100px;
+                        fill: $white-color;
+                    }
+                }
+                .link-actions:hover{
+                    transform: scale(.95);
+                    svg{
+                        fill: $white-color;
+                    }
+                }
+            }
+            .header-search{
+                width: 100;
+                height: 100px;
+                @include radius-all;
+                margin-top: 2%;
+                border:1px solid red;
+            }
+        }
+        .header-right{
+            width: 40%;
+            img{
+                width: 80%;
+            }
         }
     }
 }

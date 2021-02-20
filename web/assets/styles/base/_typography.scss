@@ -6,12 +6,12 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-$h1-size:80px;
-$h2-size:2.2em;
-$h3-size:1.8em;
-$h4-size:1.6em;
-$h5-size:1.4em;
-$p-size:1.2em;
+$h1-size:36px;
+$h2-size:32px;
+$h3-size:28px;
+$h4-size:24px;
+$h5-size:20px;
+$p-size:16px;
 h1,
 h2,
 h3,
@@ -29,13 +29,13 @@ h1 {
 }
 h2 {
     font-size: $h2-size;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
 h3 {
     font-size: $h3-size;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
@@ -92,7 +92,7 @@ table,
 span{
     line-height: 150%;
     font-size: $p-size;
-    font-weight: 300;
+    font-weight: 00;
 }
 th{
     font-size: $p-size;
