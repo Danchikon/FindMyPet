@@ -6,9 +6,9 @@ const path = require('path')
 
 const postRouter = require("./routes/postRouter");
 const homeRouter = require("./routes/homeRouter");
+const initRoutes = require("./routes/web");
 
-
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 3000
 const URI = "mongodb+srv://Daniel:YSgUyU9bdikH8SG9@findmypetcluster.m9aqq.mongodb.net/findmypet_db";
 
 
@@ -26,10 +26,12 @@ app.set('views', 'views')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.urlencoded({ extended: true }))
 
 
 app.use(postRouter)
 app.use(homeRouter)
+app.use(initRoutes)
 
 app.use((req, res, next) => {
   res.status(404).send("Not Found")
