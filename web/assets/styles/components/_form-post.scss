@@ -4,38 +4,15 @@ section.post-page{
         height: 400px;
         box-sizing: border-box;
         border:1px solid red;
-        .photo-slider{
+        .photo-el{
             width: 100%;
             height: 400px;
             box-sizing: border-box;
-            border:1px solid red;
             overflow: hidden;
             position: relative;
             img{
-                width: 100%;
-                height: 100%;
-                object-fit: fill;
-                position: absolute;
-                top:-50%;
-                left:0;
-            }
-        }
-        .photo-slider-nav{
-            width: 100%;
-            height: 100px;
-            box-sizing: border-box;
-            border:1px solid red;
-            .photo-el-nav{
-                width:90px;
-                height: 90px;
-                position: relative;
-                overflow: hidden;
-            }
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: fill;
-
+                @include image-default;
+                @include radius-all;
             }
         }
         .map-container{
@@ -43,8 +20,5 @@ section.post-page{
             height: 200px;
             border:1px solid red;
         }
-    }
-    .post-info:first-child{
-        height: 500px;
     }
 }
