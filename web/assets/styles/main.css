@@ -105,6 +105,7 @@ p {
 
 p,
 select,
+textarea,
 option,
 label,
 table,
@@ -135,12 +136,13 @@ input {
 textarea {
   -webkit-appearance: none;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 5px;
   font-size: 16px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  transition: .2s all ease-out; }
+  transition: .2s all ease-out;
+  font-family: 'Open Sans', sans-serif; }
 
 .row {
   display: flex;
@@ -493,34 +495,60 @@ ul.pagination {
   .post-creator form {
     width: 100%;
     height: auto; }
+    .post-creator form p {
+      width: 100%; }
+      .post-creator form p textarea {
+        width: 100%;
+        height: 300px;
+        resize: none; }
+      .post-creator form p select {
+        box-sizing: border-box;
+        padding: 5px;
+        width: 100%;
+        height: 45px; }
+    .post-creator form .form-container:nth-child(1n) {
+      width: 40%; }
+    .post-creator form .form-container:nth-child(2n) {
+      width: 60%; }
+      .post-creator form .form-container:nth-child(2n) select {
+        width: 80%;
+        height: 45px; }
     .post-creator form .form-container {
-      width: 50%;
-      border: 1px solid red;
       min-height: 400px;
-      margin: 1%;
       box-sizing: border-box; }
-    .post-creator form .form-container {
-      min-height: 300px; }
-      .post-creator form .form-container .photo-el {
-        height: 200px;
-        position: relative;
-        overflow: hidden; }
-        .post-creator form .form-container .photo-el img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 15px !important; }
-        .post-creator form .form-container .photo-el #upload-photo {
-          opacity: 0;
-          position: absolute;
-          z-index: -1; }
-        .post-creator form .form-container .photo-el label {
-          width: 100%;
-          height: 100%;
-          cursor: pointer; }
-          .post-creator form .form-container .photo-el label svg {
-            fill: #191919;
-            width: 200px; }
+      .post-creator form .form-container #map {
+        width: 100%;
+        height: 100%; }
+      .post-creator form .form-container input {
+        width: 80%;
+        border-bottom: 2px solid #EBEBEB; }
+      .post-creator form .form-container input:focus {
+        background-color: #EBEBEB; }
+      .post-creator form .form-container input.big {
+        height: 75px;
+        font-size: 28px;
+        text-transform: uppercase; }
+      .post-creator form .form-container input.medium {
+        height: 45px;
+        font-size: 20px; }
+    .post-creator form .form-container.image-upload {
+      border-radius: 15px !important; }
+      .post-creator form .form-container.image-upload #upload-photo {
+        opacity: 0;
+        position: absolute;
+        z-index: -1; }
+      .post-creator form .form-container.image-upload label {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        background-color: #FA4659;
+        transition: .2s all ease-out;
+        border-radius: 15px !important; }
+        .post-creator form .form-container.image-upload label svg {
+          fill: #fff;
+          width: 100px; }
+      .post-creator form .form-container.image-upload label:hover {
+        background-color: #16c79a; }
 
 section.post-page {
   width: 100%; }

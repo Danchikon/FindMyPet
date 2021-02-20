@@ -86,6 +86,7 @@ p{
 }
 p,
 select,
+textarea,
 option,
 label,
 table,
@@ -118,10 +119,12 @@ input {
 textarea {
     -webkit-appearance: none;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 5px;
     font-size: $p-size;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     transition: .2s all ease-out;
+    font-family: 'Open Sans', sans-serif;
+
 }
