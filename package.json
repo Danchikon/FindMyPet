@@ -1,0 +1,14 @@
+{
+  "name": "bloodbacket",
+  "version": "1.0.0",
+  "description": "Платформа для донорів крові",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "JWP",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
