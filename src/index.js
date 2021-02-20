@@ -1,7 +1,12 @@
 const nodemailer = require('nodemailer')
 const mongoose = require('mongoose')
 const express = require('express')
-const { Post } = require('./models/post')
+
+const Post = require('./models/Post')
+
+const postController = require("./routes/postRouter.js");
+const postController = require("./routes/homeRouter.js");
+
 
 const app = express()
 const PORT = process.env.PORT || 4000
@@ -11,6 +16,10 @@ const URI = "mongodb+srv://User:772298NOne@findmypetcluster.m9aqq.mongodb.net/po
 app.set('view engine', 'pug')
 
 app.use(express.static('public'))
+
+app.use((req, res, next) => {
+  res.status(404).send("Not Found")
+})
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
