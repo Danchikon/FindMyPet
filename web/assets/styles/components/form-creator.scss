@@ -1,0 +1,42 @@
+.post-creator{
+    width:100%;
+    form{
+        width: 100%;
+        height: auto;
+        .form-container{
+            width: 50%;
+            border:1px solid red;
+            min-height: 400px;
+            margin: 1%;
+            box-sizing: border-box;
+        }
+        .form-container{
+            min-height: 300px;
+            .photo-el{
+               height: 200px;
+               position: relative;
+               overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    @include radius-all;
+                }
+                #upload-photo {
+                    opacity: 0;
+                    position: absolute;
+                    z-index: -1;
+                 }
+                 label{
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    svg{
+                        fill: #191919;
+                        width: 200px;
+                    }
+                 }
+            }
+        }
+    }
+}
