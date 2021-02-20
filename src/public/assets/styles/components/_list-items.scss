@@ -15,19 +15,35 @@
 
                 .status{
                     @include absolute-pos-top;
-                    @include radius-top-right;
-                    @include radius-bottom-right;
-                    min-width: 50%;
-                    height: 70px;
-                    background-color: $red-color;
+                    width: 100%;
+                    min-height: 70px;
                     z-index: 999;
                     *{
                         color: $white-color;
                         text-transform: uppercase;
                     }
+                    .main,
+                    .sub{
+                        width: 50%;
+                        min-height: 70px;
+                    }
+                    .main{
+                        background-color: $red-color;
+                        @include radius-top-left;
+                        @include radius-bottom-right;
+                    }
+                    .sub{
+                        svg{
+                            width: 25px;
+                            fill:$white-color;
+                            margin: 5px;
+                        }
+                    }
                 }
                 .status.found{
-                    background-color: $green-color;
+                    .main{
+                        background-color: $green-color;
+                    }
                 }
                 .photo{
                     width: 100%;

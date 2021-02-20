@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/styles/main.css">
+        <link rel="stylesheet" href="./assets/styles/grid.css">
+        <title>Create post</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    </head>
+<body>
+    <header class="header">
+        <div class="container-full">
+            <div class="container">
+                <nav class="navigation vertical-center">
+                    <a href="#" class="logo">Find my pet</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="post-page">
+        <div class="container-full">
+            <div class="container two-per-row">
+                <div class="post-info grid-el">
+                    <div class="photo-slider">
+                        <div class="photo-el"></div>
+                    </div>
+                    <div class="photo-slider-nav">
+                        <div class="photo-el-nav">
+                            <img src="assets/img/jpg/cat-two.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="post-info grid-el padding-1vw">
+                    <h3>Name</h3>
+                    <h3>Surname</h3>
+                    <form action="" type="post">
+                        <button>Я знайшов собаку</button>
+                    </form>
+                    <div class="map-container">MAP HERE</div>
+                </div>
+                <div class="post-info grid-el padding-1vw">
+                    <p>description</p>
+                </div>
+                <div class="post-info grid-el padding-1vw">
+                    <p>COMMENTS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+         $('.photo-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.photo-slider-nav'
+        });
+        $('.photo-slider-nav').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            asNavFor: '.photo-slider',
+            dots: false,
+            centerMode: false,
+            focusOnSelect: false
+        });
+    </script>
+    <script>
+        $('.footer-slider').slick({
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 0,
+            cssEase: 'linear',
+            speed: 4000,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            arrows: false,
+            dragble: false,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 1
+                    }
+                }
+
+                ]
+        }); 
+    </script>
+</body>
+</html>

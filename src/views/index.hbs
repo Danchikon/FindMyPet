@@ -1,15 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="./assets/styles/grid.css">
+    <title>Find my pet</title>
+</head>
 <body>
     <header class="header">
         <div class="container-full">
-            <div class="container height-100">
+            <div class="container height-80">
                 <nav class="navigation vertical-center">
-                    <a href="#" class="logo">Find my pet</a>
+                    <a href="/home" class="logo">Find my pet</a>
                 </nav>
-                <div class="header-content vertical-center row margin-top-30">
+                <div class="header-content vertical-center row">
                     <div class="header-left">
-                        <h2 class="margin-vertical-30">Heading for block</h2>
+                        <h2 class="margin-bottom-30">Heading for block</h2>
                         <div class="header-actions two-per-row">
-                            <a href="#" class="link-actions grid-el center-all">
+                            <a href="/create/post" class="link-actions grid-el center-all">
                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
                                     <g>
@@ -21,11 +31,11 @@
                                         </g>
                                     </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
                                     </svg>
-                                                           <span>Шукаю</span>
+                                    <h3>Шукаю</h3>
                             </a>
                             <a href="#" class="link-actions grid-el center-all">
                                 <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m256 0c-112.36 0-203.772 91.411-203.772 203.772 0 43.688 13.626 85.341 39.406 120.458 24.119 32.854 56.819 57.356 94.839 71.13l69.302 116.64 72.375-117.615c78.953-29.877 131.623-105.793 131.623-190.613-.001-112.361-91.413-203.772-203.773-203.772zm0 332.821c-71.158 0-129.049-57.891-129.049-129.049s57.891-129.049 129.049-129.049 129.049 57.891 129.049 129.049-57.891 129.049-129.049 129.049z"/><path d="m256 104.78c-54.585 0-98.992 44.408-98.992 98.992s44.407 98.992 98.992 98.992 98.992-44.408 98.992-98.992-44.407-98.992-98.992-98.992zm-14.606 144.263-45.702-45.702 21.253-21.253 24.449 24.448 53.568-53.568 21.253 21.253z"/></g></svg>
-                                <span>Знайшов</span>
+                                <h3>Знайшов</h3>
                             </a>
                         </div>
                         <div class="header-search"></div>
@@ -37,43 +47,77 @@
             </div>
         </div>
     </header>
-    <section class="list-items margin-top-50">
+    <section class="list-items">
         <div class="container-full">
+            <div class="container">
+                <h3>All pets</h3>
+            </div>
             <div class="container">
                 <ul class="element-list four-per-row">
                     <li class="grid-el column">
-                        <a href="#">
-                            <div class="status found center-all">
-                                <h4>Знайдено</h4>
-                            </div>
-                            <div class="photo">
-                                <img src="assets/img/jpg/cat.jpg" alt="">
-                            </div>
-                            <div class="description row padding-1vw">
-                                <div class="element-info">
-                                    <h4>Animal</h4>
-                                    <span class="row">
-                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                                    <g>
-                                        <g>
-                                            <path d="M256,0C161.896,0,85.333,76.563,85.333,170.667c0,28.25,7.063,56.26,20.49,81.104L246.667,506.5
-                                                c1.875,3.396,5.448,5.5,9.333,5.5s7.458-2.104,9.333-5.5l140.896-254.813c13.375-24.76,20.438-52.771,20.438-81.021
-                                                C426.667,76.563,350.104,0,256,0z M256,256c-47.052,0-85.333-38.281-85.333-85.333c0-47.052,38.281-85.333,85.333-85.333
-                                                s85.333,38.281,85.333,85.333C341.333,217.719,303.052,256,256,256z"/>
-                                        </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>     
-                                        </svg>                              
-                                        <p>Ivano-Frankivsk</p>
-                                    </span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga distinctio beatae eius? Fuga distinctio beatae eius?</p>
-                                </div>
-                                <div class="dark-bg"></div>
-                            </div>
-                        </a>
+                        {{#if products.length}}
+                            {{#each products}}
+                            {{{ post }}}
+                            {{/each}}
+                        {{/if}}
                     </li>
+                </ul>
+            </div>
+            <div class="container">
+                <ul class="pagination row vertical-center">
+                    <li class="active"><a class="center-all" href="#">1</a></li>
+                    <li class=""><a class="center-all" href="#">2</a></li>
+                    <li class=""><a class="center-all" href="#">3</a></li>
+                    <li class=""><a class="center-all" href="#">4</a></li>
+                    <li class=""><a class="center-all" href="#">5</a></li>
                 </ul>
             </div>
         </div>
     </section>
+    <footer class="footer">
+        <ul class="footer-slider margin-vertical-30 vertical-center">
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+        </ul>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $('.footer-slider').slick({
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 0,
+            cssEase: 'linear',
+            speed: 4000,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            arrows: false,
+            dragble: false,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 1
+                    }
+                }
+
+                ]
+        }); 
+    </script>
 </body>
 </html>

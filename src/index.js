@@ -9,7 +9,7 @@ const homeRouter = require("./routes/homeRouter");
 
 
 const PORT = process.env.PORT || 4000
-const URI = "mongodb+srv://User:772298NOne@findmypetcluster.m9aqq.mongodb.net/posts";
+const URI = "mongodb+srv://Daniel:YSgUyU9bdikH8SG9@findmypetcluster.m9aqq.mongodb.net/findmypet_db";
 
 
 const app = express()

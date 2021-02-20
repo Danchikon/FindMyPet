@@ -1,10 +1,14 @@
 const { Schema, model } = require('mongoose')
 
 
-const post = Schema({
-    type: { type: String },
-    date: Date,
-    name: { type: String },
+const postSchema = Schema({
+    type: { 
+        type: String,
+        lowercase: true  
+    },
+    createData: { type: Date, default: Date.now },
+    lostData: { type: Date },
+    author: { type: String },
     phone: { type: Number },
     email: { type: String },
     city: { 
@@ -32,4 +36,5 @@ const post = Schema({
     description: { type: String }
 })
 
-module.exports = model('Post', post)
+exports.findPetPost = model('find_pets', postSchema)
+exports.lostPetPost = model('lost_pets', postSchema)

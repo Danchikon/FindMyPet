@@ -1,10 +1,10 @@
-exports.getPosts = (req, res) => {
+exports.getPosts = async (req, res) => {
     res.render('posts', {
     
     })
 }
 
-exports.getHome = (req, res) => {
+exports.getHome = async (req, res) => {
     res.render('index', {
     
     })
