@@ -1,8 +1,8 @@
-exports.addPost = async (req, res) => {
+exports.addPost = (req, res) => {
     res.redirect('/create/post')
 }
 
-exports.getPost = async (req, res) => {
+exports.getPost = (req, res) => {
     res.render('post', {
     
     })

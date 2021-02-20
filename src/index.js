@@ -4,8 +4,8 @@ const express = require('express')
 
 const Post = require('./models/Post')
 
-const postController = require("./routes/postRouter.js");
-const postController = require("./routes/homeRouter.js");
+const postRouter = require("./routes/postRouter");
+const homeRouter = require("./routes/homeRouter");
 
 
 const app = express()
@@ -16,6 +16,9 @@ const URI = "mongodb+srv://User:772298NOne@findmypetcluster.m9aqq.mongodb.net/po
 app.set('view engine', 'pug')
 
 app.use(express.static('public'))
+
+app.use(postRouter)
+app.use(homeRouter)
 
 app.use((req, res, next) => {
   res.status(404).send("Not Found")
