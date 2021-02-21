@@ -349,25 +349,23 @@ header.header {
             fill: #fff; }
       header.header .header-content .header-left .header-search {
         width: 100%;
-        height: 70px;
         position: relative;
         border-radius: 15px !important;
         margin-top: 2%; }
         header.header .header-content .header-left .header-search form {
           width: 100%;
-          height: 100%;
           background-color: #191919;
           border-radius: 15px !important; }
           header.header .header-content .header-left .header-search form input {
-            width: 80%;
-            height: 100%;
+            width: 75%;
+            min-height: 70px;
             font-size: 24px;
             color: #fff;
             background: transparent;
             position: relative; }
           header.header .header-content .header-left .header-search form button {
             width: 20%;
-            height: 100%;
+            min-height: 70px;
             background: transparent;
             position: absolute;
             color: #fff;
@@ -375,7 +373,31 @@ header.header {
             position: relative;
             text-transform: uppercase;
             font-weight: 600;
-            text-align: center; }
+            text-align: center;
+            transition: .2s all ease-out; }
+            header.header .header-content .header-left .header-search form button svg {
+              width: 80%;
+              fill: #fff;
+              transition: .2s all ease-out; }
+          header.header .header-content .header-left .header-search form button:hover {
+            color: #FA4659; }
+          header.header .header-content .header-left .header-search form span {
+            cursor: pointer;
+            width: 5%;
+            min-height: 70px; }
+            header.header .header-content .header-left .header-search form span svg {
+              width: 80%;
+              fill: #fff; }
+          header.header .header-content .header-left .header-search form span:hover svg {
+            fill: #FA4659; }
+          header.header .header-content .header-left .header-search form .filter-container {
+            width: 100%;
+            min-height: 50px;
+            display: none; }
+            header.header .header-content .header-left .header-search form .filter-container select {
+              width: 50%; }
+          header.header .header-content .header-left .header-search form .filter-container.active {
+            display: flex !important; }
     header.header .header-content .header-right {
       width: 40%; }
       header.header .header-content .header-right img {
