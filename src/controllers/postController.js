@@ -1,7 +1,12 @@
 const { Post } = require("../models/Post");
+const upload = require("../middleware/upload")
 
 
 exports.postPost = async (req, res) => {
+    await upload(req, res)
+
+    console.log(req.file)
+
     const { 
         name, 
         phone, 
@@ -26,7 +31,7 @@ exports.postPost = async (req, res) => {
 
     console.log(name, phone, email)
 
-    res.redirect('/home')
+    res.redirect(`/home`)
 }
 
 exports.createPost = async (req, res) => {

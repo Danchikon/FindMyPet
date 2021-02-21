@@ -10,7 +10,6 @@ exports.uploadFile = async (req, res) => {
       return res.send(`You must select a file.`)
     }
 
-    return res.send(`File has been uploaded.`)
   } catch (e) {
     console.log(e)
     return res.send(`Error when trying upload image: ${e}`)
