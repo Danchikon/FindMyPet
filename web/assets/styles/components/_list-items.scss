@@ -58,7 +58,17 @@
                         @include image-default;
                         @include radius-all;
                         @include default-transition;
+                        background-color: #191919;
+
                     }
+                    img.lazy-image {
+                        opacity: 0.1;
+                        will-change: opacity;
+                        transition:  .2s all ease-out;
+                    }
+                    img.lazy-image.loaded {
+                        opacity: 1;
+                      }
                 }
                 .description{
                     width: 100%;

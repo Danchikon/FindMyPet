@@ -513,7 +513,14 @@ header.header {
             height: 100%;
             object-fit: cover;
             border-radius: 15px !important;
+            transition: .2s all ease-out;
+            background-color: #191919; }
+          .list-items ul.element-list li a .photo img.lazy-image {
+            opacity: 0.1;
+            will-change: opacity;
             transition: .2s all ease-out; }
+          .list-items ul.element-list li a .photo img.lazy-image.loaded {
+            opacity: 1; }
         .list-items ul.element-list li a .description {
           width: 100%;
           min-height: 230px;
@@ -677,6 +684,15 @@ section.post-page {
   section.post-page .post-info {
     min-height: 400px;
     box-sizing: border-box; }
+    section.post-page .post-info form {
+      width: 100%; }
+      section.post-page .post-info form button {
+        width: 220px;
+        height: 50px;
+        border-radius: 15px !important;
+        background-color: #16c79a;
+        text-transform: uppercase;
+        color: #fff; }
     section.post-page .post-info .photo-el {
       width: 100%;
       height: 400px;
