@@ -61,6 +61,15 @@ exports.postLost = async (req, res) => {
 
 exports.sendPost = async (req, res) => {
 
+    const { 
+        name,
+        email, 
+        phone, 
+        desc,  
+    } = req.body
+
+    // console.log(req.body)
+
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -75,12 +84,11 @@ exports.sendPost = async (req, res) => {
     const mailOptions = {
         from: 'findmypetscom@gmail.com',
         to: post.email,
-        subject: 'ПРивіт',
-        text: 'БОБЕР ЗАГУБИВСЯ'
+        subject: name,
+        text: `${email} \n ${phone} \n ${desc}`
     }
 
     
-
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.log(error)

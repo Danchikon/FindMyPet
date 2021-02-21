@@ -19,13 +19,6 @@
                 </div>
                 <div class="post-info main grid-el padding-1vw">
                     <h3>{{ post.title }}</h3>
-                    <form type="post" class="margin-vertical-20">
-                        {{#eq post.type 'lost'}}
-                        <button type="submit" formmethod="post">Я знайшов</button>
-                        {{else}}
-                        <button type="submit" formmethod="post">Це моя тваринка</button>
-                        {{/eq}}
-                    </form>
                     <ul>
                         <li>Тип: {{ post.animal }} </li>
                         <li>Порода: {{ post.bride }} </li>
@@ -43,7 +36,20 @@
                     </p>
                     <p> <div id="map" style="height: 450px; width: 100%;"></div> </p>
                 </div>
-                
+                <div class="post-info grid-el padding-1vw">
+                    {{#eq post.type 'lost'}}
+                    <h2>Ви знайшли цю тваринку?</h2>
+                    {{else}}
+                    <h2>Це ваша тваринка?</h2>
+                    {{/eq}}
+                    <form action="" type="post" class="column">
+                        <input class="medium" type="text" name="name" required placeholder="Як вас звати?">
+                        <input class="medium" type="email" name="email" placeholder="Пошта">
+                        <input class="medium"type="tel" name="phone"required placeholder="Телефон">
+                        <textarea name="desc"></textarea>
+                        <button class="margin-top-20" type="submit" formmethod="post">Відправити</button>
+                    </form>
+                </div>
                 <div class="post-info grid-el padding-1vw">
                     <p>COMMENTS</p>
                 </div>
