@@ -5,6 +5,27 @@ section.post-page{
         box-sizing: border-box;
         form{
             width: 100%;
+            input{
+                width: 100%;
+                border-bottom: 2px solid $grey-color;
+            }
+            input:focus{
+                background-color: $grey-color;
+            }
+            input.big{
+                height: 75px;
+                font-size: $h3-size;
+                text-transform: uppercase;
+            }
+            input.medium{
+                height: 45px;
+                font-size: $h5-size;
+            }
+            textarea{
+                width: 100%;
+                height: 100px;
+                resize: none;
+            }
             button{
                 width: 220px;
                 height: 50px;

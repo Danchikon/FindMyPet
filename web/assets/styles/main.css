@@ -686,6 +686,22 @@ section.post-page {
     box-sizing: border-box; }
     section.post-page .post-info form {
       width: 100%; }
+      section.post-page .post-info form input {
+        width: 100%;
+        border-bottom: 2px solid #EBEBEB; }
+      section.post-page .post-info form input:focus {
+        background-color: #EBEBEB; }
+      section.post-page .post-info form input.big {
+        height: 75px;
+        font-size: 28px;
+        text-transform: uppercase; }
+      section.post-page .post-info form input.medium {
+        height: 45px;
+        font-size: 20px; }
+      section.post-page .post-info form textarea {
+        width: 100%;
+        height: 100px;
+        resize: none; }
       section.post-page .post-info form button {
         width: 220px;
         height: 50px;
