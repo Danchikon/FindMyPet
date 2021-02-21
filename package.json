@@ -4,7 +4,7 @@
   "description": "Платформа для донорів крові",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "author": "JWP",
   "license": "ISC",
