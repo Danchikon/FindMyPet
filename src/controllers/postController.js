@@ -31,7 +31,7 @@ exports.postPost = async (req, res) => {
 
     console.log(name, phone, email)
 
-    res.redirect(`/home`)
+    res.redirect(`/post/${post._id}`)
 }
 
 exports.createPost = async (req, res) => {
