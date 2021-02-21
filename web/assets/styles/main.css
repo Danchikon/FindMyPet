@@ -354,18 +354,19 @@ header.header {
         margin-top: 2%; }
         header.header .header-content .header-left .header-search form {
           width: 100%;
+          height: 70px;
           background-color: #191919;
           border-radius: 15px !important; }
           header.header .header-content .header-left .header-search form input {
             width: 75%;
-            min-height: 70px;
+            height: 70px;
             font-size: 24px;
             color: #fff;
             background: transparent;
             position: relative; }
           header.header .header-content .header-left .header-search form button {
             width: 20%;
-            min-height: 70px;
+            height: 70px;
             background: transparent;
             position: absolute;
             color: #fff;
@@ -392,10 +393,11 @@ header.header {
             fill: #FA4659; }
           header.header .header-content .header-left .header-search form .filter-container {
             width: 100%;
-            min-height: 50px;
+            height: 50px;
+            position: relative;
             display: none; }
             header.header .header-content .header-left .header-search form .filter-container select {
-              width: 50%; }
+              outline: none; }
           header.header .header-content .header-left .header-search form .filter-container.active {
             display: flex !important; }
     header.header .header-content .header-right {
@@ -409,29 +411,42 @@ header.header {
     height: auto !important; }
     header.header .container .header-content {
       height: auto; }
-      header.header .container .header-content .header-left {
-        width: 100%; }
-        header.header .container .header-content .header-left .header-search form input {
-          width: 70%; }
-        header.header .container .header-content .header-left .header-search form button {
-          width: 30%; }
-      header.header .container .header-content .header-right {
-        display: none; } }
+      header.header .container .header-content .header-left .header-search form input {
+        width: 60%; }
+      header.header .container .header-content .header-left .header-search form span {
+        width: 5%; }
+        header.header .container .header-content .header-left .header-search form span svg {
+          width: 100%; }
+      header.header .container .header-content .header-left .header-search form button {
+        width: 35%; } }
 @media only screen and (max-width: 768px) {
   header.header .container .header-content .header-search form input {
-    width: 70%; }
+    width: 65%; }
+  header.header .container .header-content .header-search form span {
+    width: 5%; }
   header.header .container .header-content .header-search form button {
-    width: 30%; } }
-@media (min-width: 768px) and (max-width: 1024px) {
+    width: 25%; } }
+@media (min-width: 767px) and (max-width: 1024px) {
   header.header .container {
     height: auto !important; }
     header.header .container .header-content {
       height: auto; }
-      header.header .container .header-content .header-left {
+      header.header .container .header-content .header-search form input {
         width: 60%; }
-      header.header .container .header-content .header-right {
-        width: 40%;
-        display: flex; } }
+      header.header .container .header-content .header-search form span {
+        width: 5%; }
+      header.header .container .header-content .header-search form button {
+        width: 20%; } }
+@media only screen and (max-width: 1024px) {
+  header.header .container {
+    height: auto !important; }
+
+  .header-left {
+    width: 100% !important; }
+
+  .header-right {
+    width: 100%;
+    display: none; } }
 .list-items {
   position: relative; }
   .list-items ul.element-list {
@@ -539,6 +554,9 @@ header.header {
     .list-items ul.element-list li:hover .dark-bg {
       height: 300%; }
 
+@media only screen and (max-width: 1024px) {
+  .list-items {
+    margin-top: 100px; } }
 ul.pagination {
   width: 100%;
   height: 50px;

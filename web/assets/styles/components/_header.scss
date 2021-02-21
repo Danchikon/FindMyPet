@@ -59,11 +59,12 @@ header.header{
                 margin-top: 2%;
                 form{
                     width: 100%;
+                    height: 70px;
                     background-color: $primary-color;
                     @include radius-all;
                     input{
                         width: 75%;
-                        min-height: 70px;
+                        height: 70px;
                         font-size: $h4-size;
                         color: $white-color;
                         background: transparent;
@@ -71,7 +72,7 @@ header.header{
                     }
                     button{
                         width: 20%;
-                        min-height: 70px;
+                        height: 70px;
                         background: transparent;
                         position: absolute;
                         color: $white-color;
@@ -106,10 +107,11 @@ header.header{
                     }
                     .filter-container{
                         width: 100%;
-                        min-height: 50px;
+                        height: 50px;
+                        position: relative;
                         display: none;
                         select{
-                            width: 50%;
+                            outline: none;
                         }
                     }
                     .filter-container.active{
@@ -133,21 +135,23 @@ header.header{
             height: auto !important;
             .header-content{
                 height: auto;
-                .header-left{
-                    width: 100%;
+                .header-left{   
                     .header-search{
                         form{
                             input{
-                                width: 70%;
+                                width: 60%;
+                            }
+                            span{
+                                width: 5%;
+                                svg{
+                                    width: 100%;
+                                }
                             }
                             button{
-                                width: 30%;
+                                width: 35%;
                             }
                         }
                     }
-                }
-                .header-right{
-                    display: none;
                 }
             }   
         }
@@ -160,10 +164,13 @@ header.header{
                 .header-search{
                     form{
                         input{
-                            width: 70%;
+                            width: 65%;
+                        }
+                        span{
+                            width: 5%;
                         }
                         button{
-                            width: 30%;
+                            width: 25%;
                         }
                     }
                 }
@@ -171,20 +178,25 @@ header.header{
         }
     }
 }
-
 // /* Medium devices (landscape tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 767px) and (max-width: 1024px) {
     header.header {
         .container{
             height: auto !important;
             .header-content{
                 height: auto;
-                .header-left{
-                    width: 60%;
-                }
-                .header-right{
-                    width: 40%;
-                    display: flex;
+                .header-search{
+                    form{
+                        input{
+                            width: 60%;
+                        }
+                        span{
+                            width: 5%;
+                        }
+                        button{
+                            width: 20%;
+                        }
+                    }
                 }
             }   
         }
@@ -194,5 +206,16 @@ header.header{
 
 // /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 1024px){
-
+    header.header {
+        .container{
+            height: auto !important;
+        }
+    }
+    .header-left{
+        width: 100% !important;
+    }
+    .header-right{
+        width: 100%;
+        display: none;
+    }
 }
