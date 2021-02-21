@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,800;1,400&display=swap');
+
+@import '.././abstracts/colors';
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+$h1-size:36px;
+$h2-size:32px;
+$h3-size:28px;
+$h4-size:24px;
+$h5-size:20px;
+$p-size:16px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 120%;
+    color:$primary-color;
+    word-break: break-word;
+}
+h1 {
+    font-size: $h1-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: $h2-size;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: $h3-size;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: $h4-size;
+    font-weight: 400;
+}
+
+h5 {
+    font-size: $h5-size;
+    font-weight: 300;
+}
+
+h6 {
+    font-size: $p-size;
+    font-weight: 300;
+}
+.big{
+    font-size: 4em;
+    font-weight: 700;
+}
+a {
+    outline: none;
+    text-decoration: none;
+    font-size: $p-size;
+    font-weight: 400;
+    touch-action: inherit;
+    color: $white-color;
+}
+
+a,
+a:active,
+a:visited,
+a{
+    img{
+        outline: none;
+    }
+}
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+p{
+    margin: 10px 0;
+}
+p,
+select,
+textarea,
+option,
+label,
+table,
+span{
+    line-height: 150%;
+    font-size: $p-size;
+    font-weight: 00;
+}
+th{
+    font-size: $p-size;
+    font-weight: 400;
+}
+button {
+    font-size: $p-size;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input {
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: $p-size;
+    transition: .2s all ease-out;
+}
+
+textarea {
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: $p-size;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: .2s all ease-out;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 768px) {
+
+}
+
+// /* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+
+// /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1024px){
+
+}

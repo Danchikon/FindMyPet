@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="assets/styles/main.css">
+      <link rel="stylesheet" href="assets/styles/grid.css">
+      <title>Find my pet</title>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+   </head>
+   <body>
+      <header class="header">
+         <div class="container-full">
+            <div class="container height-80">
+               <nav class="navigation vertical-center">
+                  <a href="#" class="logo">Find my pet</a>
+               </nav>
+               <div class="header-content vertical-center row">
+                  <div class="header-left">
+                     <div class="header-actions two-per-row">
+                        <a href="#" class="link-actions grid-el center-all">
+                           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve">
+                              <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                              <g></g>
+                           </svg>
+                           <h3>Шукаю</h3>
+                        </a>
+                        <a href="#" class="link-actions grid-el center-all">
+                           <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                 <path d="m256 0c-112.36 0-203.772 91.411-203.772 203.772 0 43.688 13.626 85.341 39.406 120.458 24.119 32.854 56.819 57.356 94.839 71.13l69.302 116.64 72.375-117.615c78.953-29.877 131.623-105.793 131.623-190.613-.001-112.361-91.413-203.772-203.773-203.772zm0 332.821c-71.158 0-129.049-57.891-129.049-129.049s57.891-129.049 129.049-129.049 129.049 57.891 129.049 129.049-57.891 129.049-129.049 129.049z"/>
+                                 <path d="m256 104.78c-54.585 0-98.992 44.408-98.992 98.992s44.407 98.992 98.992 98.992 98.992-44.408 98.992-98.992-44.407-98.992-98.992-98.992zm-14.606 144.263-45.702-45.702 21.253-21.253 24.449 24.448 53.568-53.568 21.253 21.253z"/>
+                              </g>
+                           </svg>
+                           <h3>Знайшов</h3>
+                        </a>
+                     </div>
+                     <div class="header-search">
+                        <form action="" type="post" class="row">
+                           <input type="search" placeholder="Пошук">
+                           <span class="center-all" id="show-filters">
+                              <svg viewBox="-5 0 394 394.00003" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="m367.820312 0h-351.261718c-6.199219-.0117188-11.878906 3.449219-14.710938 8.960938-2.871094 5.585937-2.367187 12.3125 1.300782 17.414062l128.6875 181.285156c.042968.0625.089843.121094.132812.183594 4.675781 6.3125 7.207031 13.960938 7.21875 21.816406v147.800782c-.027344 4.375 1.691406 8.582031 4.773438 11.6875 3.085937 3.101562 7.28125 4.851562 11.65625 4.851562 2.222656-.003906 4.425781-.445312 6.480468-1.300781l72.3125-27.570313c6.476563-1.980468 10.777344-8.09375 10.777344-15.453125v-120.015625c.011719-7.855468 2.542969-15.503906 7.214844-21.816406.042968-.0625.089844-.121094.132812-.183594l128.691406-181.289062c3.667969-5.097656 4.171876-11.820313 1.300782-17.40625-2.828125-5.515625-8.511719-8.9765628-14.707032-8.964844zm0 0"/>
+                              </svg>
+                           </span>
+                           <button type="submit" class="center-all">
+                           Знайти
+                           </button>
+                           <div class="filter-container three-per-row-no-margin one-per-row-no-margin-mobile">
+                              <select name="city" id="" class="grid-el">
+                                 <option value="" selected>Оберіть місто</option>
+                                 <option value="one">One</option>
+                                 <option value="two">Two</option>
+                                 <option value="three">Three</option>
+                              </select>
+                              <select name="animal" id="" class="grid-el">
+                                 <option value="" selected>Оберіть тварину</option>
+                                 <option value="cat">Cat</option>
+                                 <option value="dog">Dog</option>
+                                 <option value="horse">Horse</option>
+                              </select>
+                              <select name="status" id="" class="grid-el">
+                                 <option value="" selected>Оберіть статус</option>
+                                 <option value="searching">В розшуку</option>
+                                 <option value="found">Знайдено</option>
+                              </select>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <div class="header-right full-height center-all">
+                     <img src="assets/img/png/cat.png" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <section class="list-items">
+         <div class="container-full">
+            <div class="container margin-top-30">
+               <h3>All pets</h3>
+            </div>
+            <div class="container">
+               <ul class="element-list four-per-row">
+                 
+                  <li class="grid-el column">
+                     <a href="#">
+                        <div class="status found row">
+                           <div class="main center-all">
+                              <p>Знайдено</p>
+                           </div>
+                           <div class="sub two-per-row-no-margin">
+                              <span class="center-all grid-el">
+                                 <svg viewBox="-21 -47 682.66669 682" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m552.011719-1.332031h-464.023438c-48.515625 0-87.988281 39.472656-87.988281 87.988281v283.972656c0 48.421875 39.300781 87.824219 87.675781 87.988282v128.871093l185.183594-128.859375h279.152344c48.515625 0 87.988281-39.472656 87.988281-88v-283.972656c0-48.515625-39.472656-87.988281-87.988281-87.988281zm-83.308594 330.011719h-297.40625v-37.5h297.40625zm0-80h-297.40625v-37.5h297.40625zm0-80h-297.40625v-37.5h297.40625zm0 0"/>
+                                 </svg>
+                                 <p>99+</p>
+                              </span>
+                              <span class="center-all grid-el">
+                                 
+                                 <p>99+</p>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="photo">
+                           <img class="lazy-image" data-src="assets/img/jpg/cat.jpg" alt="">
+                        </div>
+                        <div class="description row padding-1vw">
+                           <div class="element-info">
+                              <h4>Animal</h4>
+                              <span class="row">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 488.85 488.85" style="enable-background:new 0 0 488.85 488.85;" xml:space="preserve"> <g> <path d="M244.425,98.725c-93.4,0-178.1,51.1-240.6,134.1c-5.1,6.8-5.1,16.3,0,23.1c62.5,83.1,147.2,134.2,240.6,134.2 s178.1-51.1,240.6-134.1c5.1-6.8,5.1-16.3,0-23.1C422.525,149.825,337.825,98.725,244.425,98.725z M251.125,347.025 c-62,3.9-113.2-47.2-109.3-109.3c3.2-51.2,44.7-92.7,95.9-95.9c62-3.9,113.2,47.2,109.3,109.3 C343.725,302.225,302.225,343.725,251.125,347.025z M248.025,299.625c-33.4,2.1-61-25.4-58.8-58.8c1.7-27.6,24.1-49.9,51.7-51.7 c33.4-2.1,61,25.4,58.8,58.8C297.925,275.625,275.525,297.925,248.025,299.625z"/> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+                                 <p>Ivano-Frankivsk</p>
+                              </span>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga distinctio beatae eius? Fuga distinctio beatae eius?</p>
+                           </div>
+                           <div class="dark-bg"></div>
+                        </div>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <footer class="footer">
+         <ul class="footer-slider margin-vertical-30 vertical-center">
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+            <li class="vertical-center">JWP</li>
+         </ul>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js'></script><script  src="./script.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+      <script>
+         let lazyImages = [...document.querySelectorAll('.lazy-image')];
+         let inAdvance = 300;
+         
+         function lazyLoad() {
+         lazyImages.forEach(image => {
+             if (image.offsetTop < window.innerHeight + window.pageYOffset + inAdvance) {
+             image.src = image.dataset.src;
+             image.onload = () => image.classList.add('loaded');
+             }
+         });
+         
+         // if all loaded removeEventListener
+         }
+         
+         lazyLoad();
+         
+         window.addEventListener('scroll', _.throttle(lazyLoad, 16));
+         window.addEventListener('resize', _.throttle(lazyLoad, 16));
+      </script>
+      <script>
+         $('.footer-slider').slick({
+             infinite: true,
+             autoplay: true,
+             autoplaySpeed: 0,
+             cssEase: 'linear',
+             speed: 4000,
+             slidesToShow: 6,
+             slidesToScroll: 1,
+             arrows: false,
+             dragble: false,
+             responsive: [
+                 {
+                     breakpoint: 600,
+                     settings: {
+                     slidesToShow: 3,
+                     slidesToScroll: 1
+                     }
+                 },
+                 {
+                     breakpoint: 768,
+                     settings: {
+                     slidesToShow: 5,
+                     slidesToScroll: 1
+                     }
+                 }
+         
+                 ]
+         }); 
+      </script>
+   </body>
+</html>

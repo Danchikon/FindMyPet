@@ -1,0 +1,135 @@
+.post-creator{
+    width:100%;
+    form{
+        width: 100%;
+        height: auto;
+        p{
+            width: 100%;
+            textarea{
+                width: 100%;
+                height: 300px;
+                resize: none;
+            }
+            select{
+                box-sizing: border-box;
+                padding: 5px;
+                width: 100%;
+                height: 45px;
+            }
+        }
+        .form-container:nth-child(1n){
+            width: 40%;
+        }
+        .form-container:nth-child(2n){
+            width: 60%;
+            select{
+                width: 80%;
+                height: 45px;
+            }
+        }
+        .form-container{
+            min-height: 400px;
+            box-sizing: border-box;
+            
+            #map{
+                width: 100%;
+                height: 100%;
+            }
+            input{
+                width: 100%;
+                border-bottom: 2px solid $grey-color;
+            }
+            input:focus{
+                background-color: $grey-color;
+            }
+            input.big{
+                height: 75px;
+                font-size: $h3-size;
+                text-transform: uppercase;
+            }
+            input.medium{
+                height: 45px;
+                font-size: $h5-size;
+            }
+
+        }
+        .form-container.image-upload{
+            @include radius-all;
+            #upload-photo {
+                opacity: 0;
+                position: absolute;
+                z-index: -1;
+             }
+             label{
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                background-color: $red-color;
+                @include default-transition;
+                @include radius-all;
+                svg{
+                    fill: $white-color;
+                    width: 100px;
+                }
+            }
+            label:hover{
+                background-color: $green-color;
+            }
+
+
+        }
+        input[type="submit"]{
+            width: 100%;
+            height: 75px;
+            @include radius-all;
+            background-color: $green-color;
+            font-size: $h5-size;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: $white-color;
+        }
+    }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .form-container{
+        width: 100% !important;
+    }
+    .post-creator{
+        form{
+            .form-container{
+                input.big{
+                    font-size: $h5-size !important;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .form-container{
+        width: 100% !important;
+    }
+    .post-creator{
+        form{
+            .form-container{
+                input{
+                    width: 100%;
+                }
+                input.big{
+                    font-size: $h4-size !important;
+                }
+            }
+        }
+    }
+}
+
+// /* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+
+// /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1024px){
+
+}

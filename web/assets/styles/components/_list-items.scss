@@ -1,0 +1,122 @@
+.list-items{
+    position: relative;
+    ul.element-list{
+        width: 100%;
+        li{
+            height: 600px;
+            background-color: $white-color;
+            position: relative;
+            overflow: hidden;
+            @include radius-all;
+            a{
+                @include absolute-pos-top;
+                width: 100%;
+                height: 100%;
+                z-index: 999;
+
+                .status{
+                    @include absolute-pos-top;
+                    width: 100%;
+                    min-height: 70px;
+                    z-index: 999;
+                    *{
+                        color: $white-color;
+                        text-transform: uppercase;
+                    }
+                    .main,
+                    .sub{
+                        width: 50%;
+                        min-height: 70px;
+                    }
+                    .main{
+                        background-color: $red-color;
+                        @include radius-top-left;
+                        @include radius-bottom-right;
+                    }
+                    .sub{
+                        svg{
+                            width: 25px;
+                            fill:$white-color;
+                            margin: 5px;
+                        }
+                    }
+                }
+                .status.found{
+                    .main{
+                        background-color: $green-color;
+                    }
+                }
+                .photo{
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    @include radius-all;
+                    @include absolute-pos-top;
+                    z-index: 1;
+                    img{
+                        @include absolute-pos-top;
+                        @include image-default;
+                        @include radius-all;
+                        @include default-transition;
+                        background-color: #191919;
+
+                    }
+                    img.lazy-image {
+                        opacity: 0.1;
+                        will-change: opacity;
+                        transition:  .2s all ease-out;
+                    }
+                    img.lazy-image.loaded {
+                        opacity: 1;
+                      }
+                }
+                .description{
+                    width: 100%;
+                    min-height: 230px;
+                    box-sizing: border-box;
+                    @include radius-bottom;
+                    @include absolute-pos-bottom;
+                    span{
+                        width: 100%;
+                        svg{
+                            width:20px;
+                            fill: $white-color;
+                        }
+                    }
+                    .dark-bg{
+                        @include absolute-pos-bottom;
+                        @include radius-bottom;
+                        @include default-transition;
+                        width: 100%;
+                        height: 200%;
+                        background-image: linear-gradient(to bottom, transparent, $primary-color);
+                        z-index: 1;
+                    }
+                    .element-info{
+                        width: 100%;
+                        height: 100%;
+                        z-index: 2;
+                        *{
+                            color:white;
+                        }
+                    }
+                }
+            }
+        }
+        li:hover{
+            img{
+                transform: scale(1.05);
+            }
+            .dark-bg{
+                height: 300%;
+            }    
+        }
+    }
+}
+
+// /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1024px){
+    .list-items{
+        margin-top: 100px;
+    }
+}

@@ -1,0 +1,221 @@
+header.header{
+    width: 100%;
+    & nav.navigation{
+        width: 100%;
+        height: 50px;
+        & a.logo{
+            text-transform: uppercase;
+            color: $primary-color;
+            font-size: $h2-size;
+            font-weight: 800;
+        }
+    }
+    & .header-content{
+        width: 100%;
+        height: calc(80vh - 50px);
+        & .header-left,
+        & .header-right{
+            box-sizing: border-box;
+        }
+        .header-left{
+            position: relative;
+            width: 60%;
+            .header-actions{
+                width: 100%;
+                min-height: 300px;
+                box-sizing: border-box;
+                .link-actions{
+                    height: 100%;
+                    background-color: $red-color;
+                    text-transform: uppercase;
+                    @include radius-all;
+                    @include default-transition;
+                    h3{
+                        color:$white-color;
+                    }
+                    svg{
+                        width: 100px;
+                        fill: $white-color;
+                    }
+                }
+                a{
+                    min-height: 300px;
+                }
+                .link-actions:nth-child(2n){
+                    background-color: $green-color;
+                }
+                .link-actions:hover{
+                    transform: scale(.95);
+                    svg{
+                        fill: $white-color;
+                    }
+                }
+            }
+            .header-search{
+                width: 100%;
+                
+                position: relative;
+                @include radius-all;
+                margin-top: 2%;
+                form{
+                    width: 100%;
+                    height: 70px;
+                    background-color: $primary-color;
+                    @include radius-all;
+                    input{
+                        width: 75%;
+                        height: 70px;
+                        font-size: $h4-size;
+                        color: $white-color;
+                        background: transparent;
+                        position: relative;
+                    }
+                    button{
+                        width: 20%;
+                        height: 70px;
+                        background: transparent;
+                        position: absolute;
+                        color: $white-color;
+                        box-sizing: border-box;
+                        position: relative;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        text-align: center;
+                        @include default-transition;
+                        svg{
+                            width: 80%;
+                            fill: $white-color;
+                            @include default-transition;
+                        }
+                    }
+                    button:hover{
+                        color:$red-color;
+                    }
+                    span{
+                        cursor: pointer;
+                        width: 5%;
+                        min-height: 70px;
+                        svg{
+                            width: 80%;
+                            fill: $white-color;
+                        }
+                    }
+                    span:hover{
+                        svg{
+                            fill: $red-color;
+                        }
+                    }
+                    .filter-container{
+                        width: 100%;
+                        height: 50px;
+                        position: relative;
+                        display: none;
+                        select{
+                            outline: none;
+                        }
+                    }
+                    .filter-container.active{
+                        display: flex !important;
+                    }
+                }
+            }
+        }
+        .header-right{
+            width: 40%;
+            img{
+                width: 80%;
+            }
+        }
+    }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    header.header {
+        .container{
+            height: auto !important;
+            .header-content{
+                height: auto;
+                .header-left{   
+                    .header-search{
+                        form{
+                            input{
+                                width: 60%;
+                            }
+                            span{
+                                width: 5%;
+                                svg{
+                                    width: 100%;
+                                }
+                            }
+                            button{
+                                width: 35%;
+                            }
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    header.header{
+        .container{
+            .header-content{
+                .header-search{
+                    form{
+                        input{
+                            width: 65%;
+                        }
+                        span{
+                            width: 5%;
+                        }
+                        button{
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// /* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 767px) and (max-width: 1024px) {
+    header.header {
+        .container{
+            height: auto !important;
+            .header-content{
+                height: auto;
+                .header-search{
+                    form{
+                        input{
+                            width: 60%;
+                        }
+                        span{
+                            width: 5%;
+                        }
+                        button{
+                            width: 20%;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}
+
+
+// /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1024px){
+    header.header {
+        .container{
+            height: auto !important;
+        }
+    }
+    .header-left{
+        width: 100% !important;
+    }
+    .header-right{
+        width: 100%;
+        display: none;
+    }
+}
