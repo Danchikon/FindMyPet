@@ -1,8 +1,8 @@
-const nodemailer = require('nodemailer')
 const mongoose = require('mongoose')
 const express = require('express')
 const expressHandlebars = require('express-handlebars')
 const path = require('path')
+const helpers = require('handlebars-helpers')
 
 const postRouter = require("./routes/postRouter");
 const homeRouter = require("./routes/homeRouter");
@@ -10,6 +10,7 @@ const homeRouter = require("./routes/homeRouter");
 const PORT = process.env.PORT || 3000
 const URI = "mongodb+srv://Daniel:YSgUyU9bdikH8SG9@findmypetcluster.m9aqq.mongodb.net/findmypet_db";
 
+const comparison = helpers.comparison()
 
 const app = express()
 const hbs = expressHandlebars.create({
@@ -36,23 +37,6 @@ app.use((req, res, next) => {
 })
 
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'findmypetscom@gmail.com',
-    pass: 'findmypetscom1999'
-  }
-})
-
-
-const mailOptions = {
-  from: 'findmypetscom@gmail.com',
-  to: 'denis200358@gmail.com',
-  subject: 'ПРивіт',
-  text: 'БОБЕР ЗАГУБИВСЯ'
-}
-
-
 async function start() {
   try {
     await mongoose.connect(URI, {
@@ -63,14 +47,6 @@ async function start() {
 
     app.listen(PORT, () => {
       console.log(`App listening at http://localhost:${PORT}`)
-
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          console.log(error)
-        } else {
-          console.log('Email sent: ' + info.response)
-        }
-      })
 
     })
 

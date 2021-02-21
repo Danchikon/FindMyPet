@@ -26,7 +26,7 @@
                         <input type="text" name="namePost" placeholder="Назва оголошення" class="big" required>
                     </p>
                     <p>
-                        <input type="text" name="Owner" placeholder="Власник" class="medium" required>
+                        <input type="text" name="owner" placeholder="Власник" class="medium" required>
                     </p>
                     <p>
                         <input type="tel" name="phone" placeholder="+380660707070" class="medium">
@@ -75,7 +75,7 @@
                         </select>
                     </p>
                     <p>
-                        <select name="weightAnimal" id="">
+                        <select name="weight" id="">
                             <option value="one" selected>Оберіть вагу</option>
                             <option value="lessOne">Менше 1к</option>
                             <option value="lessFive">Від 1кг до 5кг</option>
@@ -86,25 +86,66 @@
                     <p>
                         <textarea name="animalInfo" id="" placeholder="Опис вашої тварини"></textarea>
                     </p>
+                     <p> <input type="submit" value="опублікувати"/> </p>
                 </div>
                 <div class="form-container margin-top-20">
+                    <p>
+                        <input type="text" name="lat" id="lat" placeholder="Lat" class="medium" required>
+                        <input type="text" name="lng" id="lng" placeholder="Lng" class="medium" required>
+                    </p>
                     <div id="map"></div>
                 </div>
-                <input type="submit" value="опублікувати"/>
             </form>
             </div>
 
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script>
+        const mymap = L.map('map').setView([51.505, -0.09], 15)
+        const LatElement = document.getElementById("lat");
+        const LngElement = document.getElementById("lng");
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {
+            foo: 'bar', 
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);
+
+        let marker
+        let circle
+
+        function onMapClick(e) {
+            if (!marker) {
+                marker = L.marker(e.latlng)
+                circle = L.circle(e.latlng, {
+                    color: 'red',
+                    fillColor: '#f03',
+                    fillOpacity: 0.3,
+                    radius: 1000
+                })
+            } else {
+                marker.setLatLng(e.latlng)
+                circle.setLatLng(e.latlng)
+            }
+
+            LatElement.value = e.latlng.lat
+            LngElement.value = e.latlng.lng
+            marker.addTo(mymap)
+            circle.addTo(mymap)
+    
+        }       
+
+        mymap.on('click', onMapClick);
+
+    </script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         
-
-
         $('.footer-slider').slick({
             infinite: true,
             autoplay: true,
@@ -133,8 +174,5 @@
 
                 ]
         }); 
-    </script>
-    <script>
-        var mymap = L.map('map').setView([51.505, -0.09], 13);
     </script>
 </body>

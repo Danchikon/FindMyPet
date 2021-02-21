@@ -13,26 +13,37 @@
         <div class="container-full">
             <div class="container two-per-row">
                 <div class="post-info grid-el">
-                    <div class="photo-slider">
-                        <div class="photo-el"></div>
-                    </div>
-                    <div class="photo-slider-nav">
-                        <div class="photo-el-nav">
-                            <img src="/assets/img/jpg/cat-two.jpg" alt="">
-                        </div>
+                    <div class="photo-el">
+                        <img src="/assets/img/jpg/cat-two.jpg" alt="">
                     </div>
                 </div>
-                <div class="post-info grid-el padding-1vw">
-                    <h3>Name</h3>
-                    <h3>Surname</h3>
-                    <form action="" type="post">
-                        <button>Я знайшов собаку</button>
+                <div class="post-info main grid-el padding-1vw">
+                    <h3>{{ post.title }}</h3>
+                    <form type="post" class="margin-vertical-20">
+                        {{#eq post.type 'lost'}}
+                        <button type="submit" formmethod="post">Я знайшов</button>
+                        {{else}}
+                        <button type="submit" formmethod="post">Це моя тваринка</button>
+                        {{/eq}}
                     </form>
-                    <div class="map-container">MAP HERE</div>
+                    <ul>
+                        <li>Тип: {{ post.animal }} </li>
+                        <li>Порода: {{ post.bride }} </li>
+                        <li>Вага: {{ post.weight }} </li>
+                    </ul>
+                    <p> {{ post.description }} </p>
                 </div>
                 <div class="post-info grid-el padding-1vw">
-                    <p>description</p>
+                    <h3> {{ post.author }} </h3>
+                    <p> {{ post.email }} / {{ post.phone }} </p>
+                    <p> {{ post.city }} / {{ post.street }} </p>
+                    <p> 
+                        <div id="lat"> {{ post.coords.lat }} </div> 
+                        <div id="lng"> {{ post.coords.lng }} </div> 
+                    </p>
+                    <p> <div id="map" style="height: 450px; width: 100%;"></div> </p>
                 </div>
+                
                 <div class="post-info grid-el padding-1vw">
                     <p>COMMENTS</p>
                 </div>
@@ -41,24 +52,32 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-         $('.photo-slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            asNavFor: '.photo-slider-nav'
-        });
-        $('.photo-slider-nav').slick({
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            asNavFor: '.photo-slider',
-            dots: false,
-            centerMode: false,
-            focusOnSelect: false
-        });
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script>
+        const lat = parseFloat(document.getElementById("lat").innerText)
+        const lng = parseFloat(document.getElementById("lng").innerText)
+       
+        const mymap = L.map('map').setView([lat, lng], 14)
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {
+            foo: 'bar', 
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap)
+
+        marker = L.marker([lat, lng]).addTo(mymap)
+        circle = L.circle([lat, lng], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.3,
+            radius: 1000
+        }).addTo(mymap)
+
+     
     </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         $('.footer-slider').slick({
             infinite: true,
@@ -90,4 +109,3 @@
         }); 
     </script>
 </body>
-</html>
