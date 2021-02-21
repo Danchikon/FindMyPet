@@ -5,7 +5,7 @@ const homeController = require("../controllers/homeController");
 const homeRouter = Router()
 
 
-homeRouter.get('/', homeController.getPosts)
+homeRouter.get('/home', homeController.getPosts)
 
 
 module.exports = homeRouter

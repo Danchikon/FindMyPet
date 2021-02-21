@@ -34,7 +34,12 @@ exports.createPost = async (req, res) => {
 }
 
 exports.getPost = async (req, res) => {
+    const postId = req.params["postId"]
+    const post = await Post.findById(postId).lean()
+
+    console.log(post)
+
     res.render('post_page', {
-    
+        post: post
     })
 }

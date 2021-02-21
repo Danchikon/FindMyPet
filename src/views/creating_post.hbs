@@ -4,7 +4,7 @@
         <div class="container-full">
             <div class="container">
                 <nav class="navigation vertical-center">
-                    <a href="/" class="logo">Find my pet</a>
+                    <a href="#" class="logo">Find my pet</a>
                 </nav>
             </div>
             
@@ -25,6 +25,9 @@
                         <input type="text" name="namePost" placeholder="Назва оголошення" class="big" required>
                     </p>
                     <p>
+                        <input type="text" name="Owner" placeholder="Власник" class="medium" required>
+                    </p>
+                    <p>
                         <input type="tel" name="phone" placeholder="+380660707070" class="medium">
                     </p>
                     <p>
@@ -43,7 +46,6 @@
                     </p>
                 </div>
                 <!-- 
-
                 <input type="text" name="city" placeholder="city">
                 <select name="typeAnimal" id="">
                     <option value="one">One</option>
@@ -87,7 +89,6 @@
                 <div class="form-container margin-top-20">
                     <div id="map"></div>
                 </div>
-                <input type="submit" value="Опублікувати" />
             </form>
             </div>
 
@@ -132,4 +133,3 @@
         var mymap = L.map('map').setView([51.505, -0.09], 13);
     </script>
 </body>
-</html>
